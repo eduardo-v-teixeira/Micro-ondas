@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Channels;
 using System.Threading.Tasks;
 
 namespace Micro_ondas.Entities.Function
@@ -21,6 +22,6 @@ namespace Micro_ondas.Entities.Function
             Potencia = potencia;
         }
 
-
+        
     }
 }
