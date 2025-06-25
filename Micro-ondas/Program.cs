@@ -7,7 +7,7 @@ namespace Microondas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Ola");
+            Console.WriteLine();
         }
     }
 }
