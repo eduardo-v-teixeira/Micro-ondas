@@ -108,6 +108,26 @@
             Aquecendo = false;
             Console.WriteLine("Aquicimento finalizado.");
         }
+        public void Cancelar()
+        {
+            if (!Aquecendo)
+            {
+                Console.WriteLine("Nada está sendo aquecido.");
+                return;
+            }
 
+            Aquecendo = false;
+            Console.WriteLine("Aquecimento cancelado.");
+        }
+
+        public void MostrarStatus()
+        {
+            Console.WriteLine("\n=== Status do Micro-ondas ===");
+            Console.WriteLine($"Porta aberta: {PortaAberta}");
+            Console.WriteLine($"Alimento dentro: {AlimentoDentro}");
+            Console.WriteLine($"Tempo: {Tempo}");
+            Console.WriteLine($"Potencia: {Potencia}");
+            Console.WriteLine($"Aquecendo: {Aquecendo}");
+        }
     }
 }
