@@ -115,7 +115,16 @@ namespace Micro_ondas.Entities
             EmAquecimento = false;
             Console.WriteLine("Aquecimento finalizado.");
         }
-
+        public void CancelarAquecimento()
+        {
+            if (!EmAquecimento)
+            {
+                Console.WriteLine("Não há aquecimento em andamento.");
+                return;
+            }
+            EmAquecimento = false;
+            Console.WriteLine("Aquecimento cancelado.");
+        }
 
     }
 }
