@@ -58,6 +58,24 @@ namespace Micro_ondas.Entities
             Console.WriteLine($"Item '{nomeItem}' inserido.");
         }
 
+        public void RetirarItem()
+        {
+            if (!PortaAberta)
+            {
+                Console.WriteLine("Abra a porta antes de retirar o item.");
+                return;
+            }
+
+            if (Item == null)
+            {
+                Console.WriteLine("Não há item para retirar.");
+                return;
+            }
+
+            Console.WriteLine($"item '{Item.Nome}' retiradp. Aquecido: {Item.Aquecido}");
+            Item = null;
+        }
+
 
     }
 }
