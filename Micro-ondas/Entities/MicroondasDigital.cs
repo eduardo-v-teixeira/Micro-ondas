@@ -76,6 +76,23 @@ namespace Micro_ondas.Entities
             Item = null;
         }
 
+        public void configurar(int tempoSegundo, int potenciaNivel)
+        {
+            if (tempoSegundo < 1 || tempoSegundo > 600)
+            {
+                Console.WriteLine("Tempo deve ser entre 1 e 600 segundos.");
+                return;
+            }
+
+            if (potenciaNivel < 1 || potenciaNivel > 10)
+            {
+                Console.WriteLine("Potencia deve ser entre 1 e 10.");
+                return;
+            }
+
+            Tempo = tempoSegundo;
+            Potencia = potenciaNivel;   
+        }
 
     }
 }
