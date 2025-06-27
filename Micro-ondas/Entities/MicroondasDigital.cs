@@ -23,7 +23,40 @@ namespace Micro_ondas.Entities
             EmAquecimento = false;
         }
 
-        
+        public void AbrirPorta()
+        {
+            if (EmAquecimento)
+            {
+                Console.WriteLine("Não é possivel abrir a porta durante o aquecimento.");
+                return;
+            }
+
+            PortaAberta = true;
+            Console.WriteLine("Porta aberta");
+        }
+
+        public void FecharPorta()
+        {
+            PortaAberta = false;
+            Console.WriteLine("Porta fechada");
+        }
+        public void InserirItem(string nomeItem)
+        {
+            if (!PortaAberta)
+            {
+                Console.WriteLine("Abra a porta antes de inserir o item.");
+                return;
+            }
+
+            if (Item != null)
+            {
+                Console.WriteLine("Já existe um item dentro.");
+                return;
+            }
+
+            Item = new Item(nomeItem);
+            Console.WriteLine($"Item '{nomeItem}' inserido.");
+        }
 
 
     }
