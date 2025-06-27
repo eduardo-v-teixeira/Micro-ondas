@@ -91,8 +91,31 @@ namespace Micro_ondas.Entities
             }
 
             Tempo = tempoSegundo;
-            Potencia = potenciaNivel;   
+            Potencia = potenciaNivel;
         }
+
+        public void IniciarAquecimento()
+        {
+            if (PortaAberta || Item == null || Tempo == 0)
+            {
+                Console.WriteLine("Verifique se a porta está fechada, se há item e se o tempo foi definido");
+                return;
+            }
+
+            EmAquecimento = true;
+            Console.WriteLine($"Inciando aquecimento por {Tempo} segundos na potência {Potencia}...");
+
+            Thread.Sleep(500);
+
+            if (Item != null)
+            {
+                Item.Aquecido = true;
+            }
+
+            EmAquecimento = false;
+            Console.WriteLine("Aquecimento finalizado.");
+        }
+
 
     }
 }
